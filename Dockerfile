@@ -22,5 +22,8 @@ ARG JWT_SECRET
 # Lo conviertes en variable de entorno dentro del contenedor
 ENV JWT_SECRET=${JWT_SECRET}
 
+ENV DATABASE_URL=""
+ENV DATABASE_USER=""
+ENV DATABASE_PASSWORD="
 
 ENTRYPOINT ["java", "-jar", "app.jar"]
