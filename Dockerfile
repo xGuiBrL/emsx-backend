@@ -16,6 +16,11 @@ COPY --from=build /app/target/*.jar app.jar
 
 EXPOSE 9090
 
-ENV JWT_SECRET="TU_SECRETO_AQUI"
+# Declaras un argumento que viene desde afuera
+ARG JWT_SECRET
+
+# Lo conviertes en variable de entorno dentro del contenedor
+ENV JWT_SECRET=${JWT_SECRET}
+
 
 ENTRYPOINT ["java", "-jar", "app.jar"]
